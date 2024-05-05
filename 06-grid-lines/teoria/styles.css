@@ -1,0 +1,26 @@
+.container {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: [inline-1] 200px [inline-2] 100px [inline-3] 300px [inline-4] 200px  [inline-5] 200px [inline-6]; /*renombrado de lineas, por defecto vienen solamente enumeradas*/
+    grid-template-rows: 200px 100px;
+}
+
+.item {
+    border: 5px solid blue;
+    counter-increment: item;
+}
+
+.item::before {
+    content: counter(item);
+}
+
+.item:nth-of-type(4) {
+    border-color: purple;
+    grid-column-start: inline-1;
+    /* grid-column-end: inline-4; */
+    grid-column-end: -1; /*-1: va a a linea final*/
+    /* grid-column: 1/4; */ /*propiedad resumida*/
+    /* grid-row-start: 1; */
+    /* grid-row-end: 3; */
+    grid-row:1/3; /*propiedad resumida de grid-row-start y grid-row-end*/
+}

@@ -1,0 +1,21 @@
+.container {
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    /*grid-auto-columns: minmax(200px,1fr); *//*no genera una columna implicita,reemplaza grid-template-columns con auto-fill, tambien se puede aplicar un minmax, pero si pongo 1fr seexpanden demasiado y no se arma una segunda columna*/
+    /*grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); */
+    grid-auto-rows: 200px; /*no genera una fila implicita,  reemplaza grid-template-rows con auto-fill, tambien se puede aplicar un minmax*/
+    gap:2rem;
+    block-size: 100vh;
+    max-inline-size: 1024px;
+    margin: auto;
+}
+
+.item {
+    border: 5px solid red;
+    counter-increment: item;
+}
+
+.item::before {
+    content: counter(item);
+}
+
