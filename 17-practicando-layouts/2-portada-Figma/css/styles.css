@@ -1,0 +1,37 @@
+@import url("./list.css");
+@import url("./grid.css");
+
+body {
+    font-family: sans-serif;
+}
+
+.projects {
+    padding: 1rem;
+}
+
+input[id="list"]:checked ~ .projects-list {
+    border: 1px solid red;
+}
+
+input[id="list"]:checked ~ .project-actions [for="list"], 
+input[id="grid"]:checked ~ .project-actions [for="grid"] {
+    background-color: red;
+}
+
+input {
+    display: none;
+}
+
+.project-actions {
+    block-size: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+label {
+    border: 1px solid red;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.5rem;
+}

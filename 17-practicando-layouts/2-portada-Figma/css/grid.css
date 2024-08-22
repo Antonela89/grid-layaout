@@ -1,0 +1,35 @@
+input[id="grid"]:checked ~ .projects-list {
+    border: 1px solid blue;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+} 
+
+input[id="grid"]:checked ~ .projects-list .project {
+    border: 1px solid orange;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto repeat(2, 1fr);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+input[id="grid"]:checked ~ .projects-list .project .project-img {
+    inline-size: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    grid-area: 1/1 / 1/-1;
+}
+
+input[id="grid"]:checked ~ .projects-list .project .project-time {
+    grid-column-start: 2;
+}
+
+input[id="grid"]:checked ~ .projects-list .project .project-date {
+    grid-column-start: 2;
+}
+input[id="grid"]:checked ~ .projects-list .project .project-name {
+    grid-row: 2/4;
+}
