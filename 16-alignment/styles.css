@@ -1,0 +1,70 @@
+.container {
+    display: grid;    
+    grid-auto-columns: 200px;
+    grid-auto-rows: 200px;
+    grid-auto-flow: column;
+    gap:2rem;
+    block-size: 100vh;
+    margin: auto;
+    border: 10px solid brown;
+
+    /* writing-mode: modo de escritura: vertical u horizontal define la dirección del flujo de texto en un elemento, es decir, cómo se organizan los bloques y las líneas de texto dentro de un contenedor. Es útil para soportar diferentes tipos de escritura, como la escritura horizontal y vertical, y es especialmente relevante para idiomas que no siguen el flujo de texto estándar de izquierda a derecha y de arriba a abajo.
+    Valores de writing-mode:
+
+    horizontal-tb:
+        Descripción: Es el valor por defecto. El texto fluye horizontalmente de izquierda a derecha y las líneas se apilan de arriba hacia abajo.
+        Uso: Ideal para la mayoría de los idiomas occidentales como inglés, español, francés, etc.
+
+    vertical-rl:
+        Descripción: El texto fluye verticalmente de arriba a abajo y las líneas se apilan de derecha a izquierda.
+        Uso: Común en idiomas como japonés y chino en ciertos contextos tradicionales.
+
+    vertical-lr:
+        Descripción: El texto fluye verticalmente de arriba a abajo y las líneas se apilan de izquierda a derecha.
+        Uso: Es una variante menos común, pero puede ser utilizada para algunos diseños personalizados.
+
+    sideways-rl:
+        Descripción: Similar a vertical-rl, pero los caracteres se giran 90 grados en sentido antihorario, como si se viera una página en posición horizontal.
+        Uso: Útil para títulos en banners o diseños que requieren texto vertical en una página predominantemente horizontal.
+
+    sideways-lr:
+        Descripción: Similar a vertical-lr, pero los caracteres se giran 90 grados en sentido horario.
+        Uso: Similar a sideways-rl, pero con un flujo de texto opuesto. */
+
+    align-items: center; /*centra a los hijos en el eje transversal*/
+    /* align-content: center; */ /*empaquetar líneas flexibles: Controla el espacio entre las líneas de flexión en el eje transversal.*/
+    /*justify-items: center; */ 
+    justify-content: center; /* valores aceptados: start, center, end, space-between, space-around - space-evenly*/
+    /* place-items: center; */
+    /* place-content: center; */ /*valores aceptados: end, center y start*/
+    /* para agregar los space en la propiedad resumida lo agrego como segundo parametro: place-content: center space-around*/
+}
+
+.item {
+    border: 5px solid red;
+    counter-increment: item;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-self: */
+    /* justify-self:  */
+    /* place-self:  */ /* es la union de las dos propiedades anteriores*/
+}
+
+.item::before {
+    content: counter(item);
+}
+
+.item:nth-child(3) {
+    border-color: green;
+    /*align-self:  center; *//*centra solamente este elemento*/
+    /*justify-self: center;*/
+    place-self: center; /* es la union de las dos propiedades anteriores*/
+}
+
+.item:nth-child(4) {
+    border-color: purple;
+}
+
