@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background-color: #78bbcb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+    border: 5px solid black;
+}
+
+.grid img {
+    max-inline-size: 100%;
+    box-sizing: border-box;
+}
+
+.god {
+    border: 10px solid red;
+    grid-row-start: 2;
+    /* grid-column-start: 3;
+    grid-column-end: 5; */
+    grid-column: 3/5;
+}
+
+.mouth {
+    border: 10px solid yellow;
+    grid-column-start: 5;
+    grid-row-start: 4;
+}
+
+.clock {
+    border: 10px solid green;
+    grid-row-start: 4;
+    grid-column-start: 2;
+}
+
+.ring {
+    border: 10px solid orange;
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+.toaster {
+    border: 10px solid blue;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.worm {
+    border: 10px solid purple;
+    grid-column-start: -1;
+    grid-row-start: 2;
+}
